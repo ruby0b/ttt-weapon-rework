@@ -12,6 +12,10 @@ TTTWR.MakeWeapon(SWEP,
 	0, 0, 0
 )
 
+SWEP.AmmoEnt = "item_ammo_pistol_ttt"
+SWEP.Primary.Ammo = "Pistol"
+SWEP.Primary.ClipMax = 120
+
 SWEP.HoldType = "shotgun"
 
 SWEP.FalloffStart = 384

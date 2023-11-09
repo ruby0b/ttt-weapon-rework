@@ -3,7 +3,7 @@ local SWEP = {}
 SWEP.AmmoEnt = "item_ammo_357_ttt"
 
 SWEP.Primary = {
-	ClipMax = 20,
+	ClipMax = 36,
 	Ammo = "357",
 }
 

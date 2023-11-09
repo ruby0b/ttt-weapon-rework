@@ -49,9 +49,11 @@ for k, v in pairs({
 	add("tttwr_" .. k .. "_name", v)
 end
 
-add("ammo_pistol", "Pistol ammo")
-add("ammo_smg1", "Rifle ammo")
-add("ammo_357", "Sniper ammo")
+add("ammo_pistol", "Light ammo")
+add("ammo_smg1", "Medium ammo")
+add("ammo_357", "Heavy ammo")
+add("ammo_buckshot", "Shotgun Shells")
+-- Unused:
 add("ammo_alyxgun", "Magnum ammo")
 add("ammo_airboatgun", "LMG ammo")
 

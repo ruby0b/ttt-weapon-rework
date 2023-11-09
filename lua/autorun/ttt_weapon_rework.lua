@@ -76,9 +76,25 @@ local function PostGamemodeLoaded()
 
 	incl("magneto", true)
 
-	local ammpist = scripted_ents.GetStored("item_ammo_pistol_ttt").t
-	ammpist.AmmoAmount = 60
-	ammpist.AmmoMax = 120
+	-- Light Ammo
+	local item_ammo_pistol_ttt = scripted_ents.GetStored("item_ammo_pistol_ttt").t
+	item_ammo_pistol_ttt.AmmoAmount = 60 -- 20
+	item_ammo_pistol_ttt.AmmoMax = 120 -- 60
+	-- Medium Ammo
+	local item_ammo_smg1_ttt = scripted_ents.GetStored("item_ammo_smg1_ttt").t
+	item_ammo_smg1_ttt.AmmoAmount = 30 -- 30
+	item_ammo_smg1_ttt.AmmoMax = 60 -- 60
+	-- Heavy Ammo
+	local item_ammo_357_ttt = scripted_ents.GetStored("item_ammo_357_ttt").t
+	item_ammo_357_ttt.AmmoAmount = 12 -- 10
+	item_ammo_357_ttt.AmmoMax = 36 -- 20
+	-- Shotgun Shells
+	local item_box_buckshot_ttt = scripted_ents.GetStored("item_box_buckshot_ttt").t
+	item_box_buckshot_ttt.AmmoAmount = 12 -- 10
+	item_box_buckshot_ttt.AmmoMax = 24 -- 20
+	-- Stop Spawning Deagle Ammo
+	local item_ammo_revolver_ttt = scripted_ents.GetStored("item_ammo_revolver_ttt").t
+	item_ammo_revolver_ttt.AutoSpawnable = false
 
 	-- allow these weapons to be deployed near-instantly
 	for _, v in pairs({

@@ -33,9 +33,9 @@ SWEP.DeployAnimSpeed = 1.15
 SWEP.BulletTracer = 1
 
 SWEP.Primary.ClipMax = 36
-SWEP.Primary.Ammo = "AlyxGun"
+SWEP.Primary.Ammo = "357"
 
-SWEP.AmmoEnt = "item_ammo_revolver_ttt"
+SWEP.AmmoEnt = "item_ammo_357_ttt"
 
 SWEP.DryFireAnim = ACT_VM_DRYFIRE
 
