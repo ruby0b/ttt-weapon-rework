@@ -68,6 +68,8 @@ local function PostGamemodeLoaded()
 
 	incl("client", true)
 
+	incl("client_extra", true)
+
 	incl("decoy", true)
 
 	incl("priotargs", true)
@@ -192,6 +194,7 @@ incl("mkshotgun")
 
 incl("mkzoomable")
 incl("mklasersniper")
+incl("mkdoubleaction")
 incl("mkequip")
 
 if GAMEMODE then

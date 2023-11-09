@@ -1,10 +1,10 @@
 TTTWR.MakePistol(SWEP,
 	"python",
 	"",
-	{"weapons/357/357_fire3.wav", 90, 90},
+	{ "weapons/357/357_fire3.wav", 90, 90 },
 	35,
 	60 / 120,
-	0.02,
+	0.05,
 	5,
 	6,
 	-4.7, -4.2, 1.5,
@@ -12,11 +12,17 @@ TTTWR.MakePistol(SWEP,
 )
 
 
-SWEP.AutoSpawnable = false -- already spawns by replacing half of deagles (see sv_replace.lua)
+TTTWR.MakeDoubleAction(SWEP, "weapons/csgo/revolver_hammer.wav", 0.4)
+
+SWEP.Secondary.Automatic = true
+
+SWEP.AutoSpawnable = true
 
 SWEP.HeadshotMultiplier = 17 / 7
 
-SWEP.ConeResetStart = 2 / 3
+SWEP.IronsightsConeScale = 0.1
+
+SWEP.ConeResetStart = false
 
 SWEP.ReloadTime = 1.5
 SWEP.ReloadTimeConsecutive = 0.6
@@ -48,7 +54,11 @@ SWEP.ActivityRemap = {
 	[ACT_MP_RELOAD_CROUCH] = ACT_HL2MP_GESTURE_RELOAD_REVOLVER,
 }
 
+local DoubleAction_OnThink = SWEP.OnThink
+
 function SWEP:OnThink()
+	DoubleAction_OnThink(self)
+
 	local reloading = self:GetReloading()
 
 	if reloading <= 0 then
@@ -95,11 +105,11 @@ function SWEP:OnThink()
 	::fin::
 
 	if fin or (
-		owner
-		and clip > 0
-		and owner.KeyDown
-		and owner:KeyDown(IN_ATTACK)
-	) then
+			owner
+			and clip > 0
+			and owner.KeyDown
+			and owner:KeyDown(IN_ATTACK)
+		) then
 		self:SetReloading(0)
 		self:SetInserting(false)
 
