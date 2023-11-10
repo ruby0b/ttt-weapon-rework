@@ -9,6 +9,12 @@ TTTWR.MakeSniper(SWEP,
 	5
 )
 
+if CLIENT then
+	SWEP.EquipMenuData = {
+		type = "Weapon",
+		desc = "AWP Sniper Rifle.\nFully charged bodyshots kill in one hit."
+	}
+end
 
 TTTWR.MakeChargeableSniper(SWEP, 1, 2)
 
