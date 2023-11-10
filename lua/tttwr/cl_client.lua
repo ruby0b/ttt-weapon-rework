@@ -31,6 +31,7 @@ for k, v in pairs({
 	g3 = "G3",
 	krieg = "Krieg",
 	pocket = "Pocket Rifle",
+	winchester = "Winchester",
 
 	m3 = "M3",
 	xm = "XM",
@@ -45,7 +46,7 @@ for k, v in pairs({
 	sim16 = "Silenced M4",
 	sipist = "Silenced USP",
 	tmp = "TMP Prototype",
-	penetrator = "The Penetrator",
+	penetrator = "X-Ray Deagle",
 }) do
 	add("tttwr_" .. k .. "_name", v)
 end
