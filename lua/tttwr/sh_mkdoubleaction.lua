@@ -24,7 +24,6 @@ function SWEP:PrimaryAttack()
     end
 
     if self:GetDoubleActionShootTime() < 0 then
-        print("Setting shoot time to: " .. CurTime() + self.DoubleActionTime)
         self:SetDoubleActionShootTime(CurTime() + self.DoubleActionTime)
         self:SetIronsights(true)
 
@@ -55,9 +54,6 @@ end
 
 function SWEP:OnThink()
     local shoot_time = self:GetDoubleActionShootTime()
-    if shoot_time ~= -1 then
-        print("shoot_time: " .. shoot_time, "CurTime: " .. CurTime())
-    end
 
     if shoot_time < 0 then
         return
@@ -69,7 +65,6 @@ function SWEP:OnThink()
     end
 
     if CurTime() >= shoot_time then
-        print("Shooting")
         self:PrimaryFire()
         self:DoubleActionReset()
     elseif owner:KeyReleased(IN_ATTACK) then
