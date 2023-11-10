@@ -1,9 +1,10 @@
 local SWEP = {}
 
-function TTTWR:MakeChargeableSniper(chargetime)
+function TTTWR:MakeChargeableSniper(chargetime, maxdamagemultiplier)
 	TTTWR.CopySWEP(self, SWEP)
 
 	self.SniperRifleChargeTime = chargetime
+	self.SniperRifleChargeMaxMultiplier = maxdamagemultiplier or 1.5
 end
 
 function SWEP:PreSetupDataTables()
@@ -44,7 +45,7 @@ function SWEP:OnThink()
 		)
 
 		self.BulletDamageMultiplier = TTTWR.RemapClamp(
-			charge, 100, 1000, 1, 1.5
+			charge, 100, 1000, 1, self.SniperRifleChargeMaxMultiplier
 		)
 	else
 		charge = nil

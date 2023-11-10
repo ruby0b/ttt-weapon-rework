@@ -4,7 +4,7 @@ TTTWR.MakeSniper(SWEP,
 	"weapons/g3sg1/g3sg1-1.wav",
 	25,
 	60 / 240,
-	0.02,
+	0.03,
 	3,
 	20
 )

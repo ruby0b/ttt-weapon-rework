@@ -10,11 +10,12 @@ SWEP.Secondary = {
 	Sound = "Default.Zoom",
 }
 
-function TTTWR:MakeZoomable(fov, dot)
+function TTTWR:MakeZoomable(fov, dot, hidecrosshair)
 	TTTWR.CopySWEP(self, SWEP)
 
 	self.ZoomFOV = fov or 20
 	self.ZoomRedDot = dot
+	self.HideCrosshair = hidecrosshair
 end
 
 function SWEP:SetZoom(b)
@@ -112,6 +113,9 @@ function SWEP:DrawHUD()
 			self:ZoomableDrawHUD()
 		end
 
+		if self.HideCrosshair then
+			return
+		end
 		return self.BaseClass.DrawHUD(self)
 	end
 

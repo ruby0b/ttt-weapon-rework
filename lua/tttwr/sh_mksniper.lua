@@ -10,6 +10,8 @@ SWEP.Primary = {
 SWEP.HeadshotMultiplier = 2
 SWEP.LimbshotMultiplier = 0.5
 
+SWEP.IronsightsConeScale = 0  -- perfect accuracy while zoomed in
+
 SWEP.FalloffMult = false
 SWEP.ConeResetStart = false
 
@@ -32,10 +34,10 @@ SWEP.ActivityRemapIronsighted = {
 	[ACT_MP_SWIM_IDLE] = ACT_HL2MP_SWIM_IDLE_RPG,
 }
 
-function TTTWR:MakeSniper(class, model, sound, dmg, ...)
-	TTTWR.MakeWeapon(self, class, sound, dmg, ...)
+function TTTWR:MakeSniper(class, model, sound, dmg, delay, cone, ...)
+	TTTWR.MakeWeapon(self, class, sound, dmg, delay, cone, ...)
 
-	TTTWR.MakeZoomable(self)
+	TTTWR.MakeZoomable(self, nil, nil, true)
 
 	TTTWR.CopySWEP(self, SWEP)
 

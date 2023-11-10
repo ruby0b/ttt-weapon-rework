@@ -4,7 +4,7 @@ TTTWR.MakeSniper(SWEP,
 	"weapons/sg550/sg550-1.wav",
 	40,
 	0.45, -- 133 rpm
-	0,
+	0.03,
 	3,
 	20
 )

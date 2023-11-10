@@ -19,7 +19,7 @@ for k, v in pairs({
 	p90 = "P90",
 	mp7 = "MP7",
 
-	m16 = "M16",
+	m16 = "M4",
 	ak47 = "AK-47",
 	famas = "FAMAS",
 	galil = "Galil",
@@ -30,6 +30,7 @@ for k, v in pairs({
 	awp = "AWP",
 	g3 = "G3",
 	krieg = "Krieg",
+	pocket = "Pocket Rifle",
 
 	m3 = "M3",
 	xm = "XM",
@@ -41,7 +42,7 @@ for k, v in pairs({
 	huge = "H.U.G.E-249",
 
 	elites = "Dual Elites",
-	sim16 = "Silenced M16",
+	sim16 = "Silenced M4",
 	sipist = "Silenced USP",
 	tmp = "TMP Prototype",
 	penetrator = "The Penetrator",
