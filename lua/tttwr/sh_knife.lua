@@ -1,3 +1,15 @@
+-- Add a speed boost
+hook.Add("TTTPlayerSpeedModifier", "KnifeRun", function(ply, _, _, noLag)
+	if not (IsValid(ply) and ply:IsActive()) then return end
+	local wep = ply:GetActiveWeapon()
+	if not (wep and IsValid(wep) and wep:GetClass() == "weapon_ttt_knife") then return end
+	if TTT2 then
+		noLag[1] = noLag[1] * 1.2
+	else
+		return 1.2
+	end
+end)
+
 local SWEP = weapons.GetStored("weapon_ttt_knife")
 local ENT = scripted_ents.GetStored("ttt_knife_proj").t
 
