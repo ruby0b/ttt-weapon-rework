@@ -2,22 +2,23 @@ TTTWR.MakeSniper(SWEP,
     "winchester",
     "",
     "weapons/winchester73/w73-1.wav",
-    36,
+    30,
     60 / 66,
-    0.01,
+    0.02,
     3,
-    6,
+    7,
     4.356, 0, 2.591,
     0, 0, 0
 )
 
 
-TTTWR.MakeIronsightsChargeableSniper(SWEP, 2.5, 1.4)
+TTTWR.MakeIronsightsChargeableSniper(SWEP, 2.5, 1.8)
 
 SWEP.HeadshotMultiplier = 2.1
 
 SWEP.HideCrosshair = false
-SWEP.ZoomFOV = 35
+SWEP.ZoomFOV = 45
+SWEP.Secondary.Sound = nil
 
 if CLIENT then
     SWEP.Icon = "VGUI/ttt/lykrast/icon_sp_winchester"
@@ -51,7 +52,7 @@ function SWEP:OnThink()
     return shotgun_think(self)
 end
 
-SWEP.ReloadTime = 0.5
-SWEP.ReloadTimeConsecutive = 0.5
+SWEP.ReloadTime = 0.75
+SWEP.ReloadTimeConsecutive = 0.75
 SWEP.ReloadTimeFinish = 0.5
 SWEP.ReloadAnim = ACT_SHOTGUN_RELOAD_START

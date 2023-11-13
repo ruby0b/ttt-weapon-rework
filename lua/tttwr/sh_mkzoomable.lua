@@ -49,7 +49,7 @@ function SWEP:SecondaryAttack()
 	self:SetZoom(b)
 	self:SetIronsights(b)
 
-	if CLIENT then
+	if CLIENT and self.Secondary.Sound then
 		self:EmitSound(self.Secondary.Sound)
 	end
 

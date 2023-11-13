@@ -22,7 +22,7 @@ end
 function SWEP:OnThink()
 	local charge = self:GetSniperCharge()
 
-	if CurTime() < self:GetNextPrimaryFire() then
+	if CurTime() < self:GetNextPrimaryFire() or self:Clip1() == 0 then
 		self:SetSniperCharge(-1)
 
 		return

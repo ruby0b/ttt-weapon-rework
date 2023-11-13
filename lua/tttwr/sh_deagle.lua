@@ -4,7 +4,7 @@ TTTWR.MakePistol(SWEP,
 	"deagle",
 	"deagle",
 	{"weapons/deagle/deagle-1.wav", 90},
-	30,
+	35,
 	60 / 120,
 	0.02,
 	5,
@@ -14,7 +14,10 @@ TTTWR.MakePistol(SWEP,
 )
 
 
-SWEP.HeadshotMultiplier = 3.4
+SWEP.HeadshotMultiplier = 3.5
+
+SWEP.FalloffStart = 384
+SWEP.FalloffEnd = 1280
 
 SWEP.ConeResetStart = 2 / 3
 
