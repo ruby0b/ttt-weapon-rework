@@ -130,7 +130,7 @@ function GAMEMODE:DoPlayerDeath(ply, attacker, dmginfo)
 
 	if wep then
 		WEPS.DropNotifiedWeapon(ply, wep, true)
-		wep:DampenDrop()
+		if wep.DampenDrop then wep:DampenDrop() end
 
 		local pos, ang
 
@@ -193,7 +193,7 @@ function GAMEMODE:DoPlayerDeath(ply, attacker, dmginfo)
 		local wep = dropweps[i]
 
 		WEPS.DropNotifiedWeapon(ply, wep, true)
-		wep:DampenDrop()
+		if wep.DampenDrop then wep:DampenDrop() end
 	end
 
 	if IsValid(ply.hat) then
