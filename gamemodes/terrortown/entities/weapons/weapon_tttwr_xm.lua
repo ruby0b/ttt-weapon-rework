@@ -1,9 +1,9 @@
 TTTWR.MakeShotgun(SWEP,
 	"xm",
 	"xm1014",
-	"tttwr/xm.ogg",
-	4,
-	60 / 250,
+	"weapons/xm1014/xm1014-1.wav",
+	6, -- 4
+	60 / 170, -- 60 / 250
 	0.085,
 	3,
 	8,
@@ -17,7 +17,3 @@ SWEP.ReloadTimeConsecutive = 0.4
 SWEP.ReloadAnimSpeed = 1
 SWEP.ReloadAnimSpeedConsecutive = 1.5
 SWEP.DeployAnimSpeed = 0.95
-
-if SERVER then
-	resource.AddSingleFile("sound/tttwr/xm.ogg")
-end

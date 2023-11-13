@@ -36,6 +36,7 @@ for k, v in pairs({
 	m3 = "M3",
 	xm = "XM",
 	spas = "SPAS-12",
+	mag7 = "MAG-7",
 
 	deagle = "Deagle",
 	python = "Revolver",
