@@ -210,6 +210,7 @@ incl("mkshotgun")
 
 incl("mkzoomable")
 incl("mklasersniper")
+incl("mkfocussniper")
 incl("mkdoubleaction")
 incl("mkequip")
 

@@ -16,10 +16,8 @@ if CLIENT then
 	}
 end
 
-TTTWR.MakeChargeableSniper(SWEP, 1, 2)
+TTTWR.MakeIronsightsChargeableSniper(SWEP, 2)
 
 TTTWR.MakeEquipment(SWEP, { ROLE_TRAITOR, ROLE_DETECTIVE })
-
-SWEP.HeadshotMultiplier = 1.6
 
 SWEP.ReloadTime = 4

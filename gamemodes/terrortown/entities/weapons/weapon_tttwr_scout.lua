@@ -2,15 +2,15 @@ TTTWR.MakeSniper(SWEP,
 	"scout",
 	"scout",
 	"weapons/scout/scout_fire-1.wav",
-	36,
+	27,
 	60 / 60,
-	0.03,
+	0.02,
 	3,
 	10
 )
 
 
-TTTWR.MakeChargeableSniper(SWEP, 1)
+TTTWR.MakeIronsightsChargeableSniper(SWEP, 1.5)
 
 SWEP.ReloadTime = 3
 SWEP.DeployTime = 0.875

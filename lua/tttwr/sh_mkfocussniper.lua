@@ -1,6 +1,6 @@
 local SWEP = {}
 
-function TTTWR:MakeChargeableSniper(chargetime, maxdamagemultiplier)
+function TTTWR:MakeIronsightsChargeableSniper(chargetime, maxdamagemultiplier)
 	TTTWR.CopySWEP(self, SWEP)
 
 	self.SniperRifleChargeTime = chargetime
@@ -14,21 +14,25 @@ function SWEP:PreSetupDataTables()
 end
 
 function SWEP:PrimaryAttack()
-	if not self:CanPrimaryAttack() then
-		return
-	end
+	self:SetSniperCharge(-1)
 
-	if self:GetSniperCharge() < 0 then
-		self.BulletDamageMultiplier = nil
-
-		self:SetSniperCharge(0)
-	end
+	self:PrimaryFire()
 end
 
 function SWEP:OnThink()
 	local charge = self:GetSniperCharge()
 
-	if charge < 0 then
+	if CurTime() < self:GetNextPrimaryFire() then
+		self:SetSniperCharge(-1)
+
+		return
+	end
+
+	if not self:GetIronsights() then
+		if charge >= 0 then
+			self:SetSniperCharge(-1)
+		end
+
 		return
 	end
 
@@ -51,14 +55,6 @@ function SWEP:OnThink()
 		charge = nil
 	end
 
-	if owner:KeyReleased(IN_ATTACK) then
-		self:SetSniperCharge(-1)
-
-		self:PrimaryFire()
-
-		return
-	end
-
 	if charge then
 		self:SetSniperCharge(charge)
 	end
@@ -76,42 +72,6 @@ function SWEP:ZoomableHolster()
 	self:SetSniperCharge(-1)
 
 	return true
-end
-
-function SWEP:OnSniperChargeChanged(_, old, new)
-	if new <= 100 or old > 100 then
-		return
-	end
-
-	local owner = self:GetOwner()
-
-	if CLIENT and owner ~= LocalPlayer() or not IsValid(owner) then
-		return
-	end
-
-	local laser = owner.SniperLaserEnt
-
-	if not IsValid(laser) then
-		laser = (CLIENT and ents.CreateClientside or ents.Create)("tttwr_sniperlaser")
-
-		owner.SniperLaserEnt = laser
-
-		if CLIENT then
-			laser.ClientsideSniperLaser = true
-		else
-			laser:SetPreventTransmit(owner, true)
-			laser:SetParent(owner)
-		end
-
-		laser:SetOwner(owner)
-		laser:Spawn()
-	end
-
-	laser:EnableLaser()
-end
-
-function SWEP:PostSetupDataTables()
-	self:NetworkVarNotify("SniperCharge", self.OnSniperChargeChanged)
 end
 
 if SERVER then

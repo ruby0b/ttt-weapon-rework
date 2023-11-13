@@ -37,7 +37,7 @@ SWEP.ActivityRemapIronsighted = {
 function TTTWR:MakeSniper(class, model, sound, dmg, delay, cone, ...)
 	TTTWR.MakeWeapon(self, class, sound, dmg, delay, cone, ...)
 
-	TTTWR.MakeZoomable(self, nil, nil, true)
+	TTTWR.MakeZoomable(self, nil, nil, nil)
 
 	TTTWR.CopySWEP(self, SWEP)
 

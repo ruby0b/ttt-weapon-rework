@@ -9,7 +9,7 @@ TTTWR.MakeRifle(SWEP,
 	30
 )
 
-TTTWR.MakeZoomable(SWEP, 45)
+TTTWR.MakeZoomable(SWEP, 40)
 
 
 SWEP.IronsightsRecoilScale = 0.2

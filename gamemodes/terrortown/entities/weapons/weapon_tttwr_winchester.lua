@@ -4,15 +4,17 @@ TTTWR.MakeSniper(SWEP,
     "weapons/winchester73/w73-1.wav",
     36,
     60 / 66,
-    0.02,
+    0.01,
     3,
-    7,
+    6,
     4.356, 0, 2.591,
     0, 0, 0
 )
 
 
-TTTWR.MakeChargeableSniper(SWEP, 1)
+TTTWR.MakeIronsightsChargeableSniper(SWEP, 3, 1.4)
+
+SWEP.HeadshotMultiplier = 2.1
 
 SWEP.HideCrosshair = false
 SWEP.ZoomFOV = 35
