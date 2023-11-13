@@ -2,8 +2,8 @@ TTTWR.MakePistol(SWEP,
 	"python",
 	"",
 	{ "weapons/357/357_fire3.wav", 90, 90 },
-	30,
-	60 / 120,
+	35,
+	60 / 150,
 	0.04,
 	5,
 	6,
@@ -18,7 +18,7 @@ SWEP.Secondary.Automatic = true
 
 SWEP.AutoSpawnable = true
 
-SWEP.HeadshotMultiplier = 3.4
+SWEP.HeadshotMultiplier = 2.9
 
 SWEP.IronsightsConeScale = 0.1
 

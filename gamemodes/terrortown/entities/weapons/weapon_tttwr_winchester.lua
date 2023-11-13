@@ -12,7 +12,7 @@ TTTWR.MakeSniper(SWEP,
 )
 
 
-TTTWR.MakeIronsightsChargeableSniper(SWEP, 3, 1.4)
+TTTWR.MakeIronsightsChargeableSniper(SWEP, 2.5, 1.4)
 
 SWEP.HeadshotMultiplier = 2.1
 
