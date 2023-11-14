@@ -6,18 +6,24 @@ TTTWR.MakeSniper(SWEP,
 	60 / 40,
 	0.03,
 	7,
-	5
+	2
 )
+
+TTTWR.MakeIronsightsChargeableSniper(SWEP, 2)
+
+SWEP.HideCrosshair = true
+
+SWEP.ReloadTime = 4
+
+TTTWR.MakeEquipment(SWEP, { ROLE_TRAITOR, ROLE_DETECTIVE })
+
+TTTWR.ExtraAmmoOnBuy = 0
+
+SWEP.Primary.Ammo = "none"
 
 if CLIENT then
 	SWEP.EquipMenuData = {
 		type = "Weapon",
-		desc = "AWP Sniper Rifle.\nFully charged bodyshots kill in one hit."
+		desc = "AWP Sniper Rifle.\n\nFully charged bodyshots kill in one hit."
 	}
 end
-
-TTTWR.MakeIronsightsChargeableSniper(SWEP, 2)
-
-TTTWR.MakeEquipment(SWEP, { ROLE_TRAITOR, ROLE_DETECTIVE })
-
-SWEP.ReloadTime = 4
