@@ -4,7 +4,7 @@ TTTWR.MakePistol(SWEP,
 	"sipist",
 	"usp",
 	{"weapons/usp/usp1.wav", 65, 90, 0.8},
-	33,
+	40,
 	60 / 180,
 	0.0125,
 	2,
@@ -15,6 +15,7 @@ TTTWR.MakePistol(SWEP,
 
 TTTWR.MakeEquipment(SWEP)
 
+SWEP.HeadshotMultiplier = 3
 
 SWEP.ExtraAmmoOnBuy = 32
 
