@@ -11,5 +11,6 @@ TTTWR.MakeRifle(SWEP,
 	1, 0, 0
 )
 
+TTTWR.MakeAutoSwitch(SWEP)
 
 SWEP.ReloadTime = 2.75

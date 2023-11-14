@@ -11,6 +11,7 @@ TTTWR.MakeRifle(SWEP,
 	3.32, -1.35, -4.2
 )
 
+TTTWR.MakeAutoSwitch(SWEP)
 
 TTTWR.MakeEquipment(SWEP,
 	CreateConVar(

@@ -212,6 +212,8 @@ incl("mkzoomable")
 incl("mklasersniper")
 incl("mkfocussniper")
 incl("mkdoubleaction")
+incl("mkmodeswitch")
+incl("mkautoswitch")
 incl("mkequip")
 
 if GAMEMODE then

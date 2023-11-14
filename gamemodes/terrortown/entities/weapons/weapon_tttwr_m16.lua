@@ -11,6 +11,7 @@ TTTWR.MakeRifle(SWEP,
 	3.32, -1.35, -4.2
 )
 
+TTTWR.MakeAutoSwitch(SWEP)
 
 function SWEP:OnThink()
 	-- the m4a1's attack animation ends with a weird angle

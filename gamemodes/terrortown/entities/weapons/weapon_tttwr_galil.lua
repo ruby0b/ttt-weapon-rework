@@ -11,5 +11,6 @@ TTTWR.MakeRifle(SWEP,
 	0, 0, 0
 )
 
+TTTWR.MakeAutoSwitch(SWEP)
 
 SWEP.DeployTime = 0.875
