@@ -27,3 +27,27 @@ SWEP.HoldType = "ar2"
 SWEP.UseHands = false
 SWEP.NoSetInsertingOnReload = false
 
+SWEP.InspectAnimation = ACT_VM_IDLE_DEPLOYED
+
+function SWEP:SecondaryAttack()
+    if self:InspectWeapon() then
+        return
+    end
+
+    self.BaseClass.SecondaryAttack(self)
+end
+
+function SWEP:InspectWeapon()
+    local owner = self:GetOwner()
+
+    if not IsValid(owner) or self:GetIronsights() then return end
+
+    if not owner:KeyDown(IN_USE) then
+        -- we want to use ironsights, stop the inspect animation to prevent jank
+        self:SendWeaponAnim(ACT_VM_IDLE)
+        return false
+    end
+
+    self:SendWeaponAnim(self.InspectAnimation)
+    return true
+end

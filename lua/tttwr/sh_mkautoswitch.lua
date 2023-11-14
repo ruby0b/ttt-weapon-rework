@@ -1,6 +1,6 @@
 function TTTWR:MakeAutoSwitch(semidamage)
     self.DefaultDamage = self.Primary.Damage
-    self.SemiDamage = semidamage or math.Round(self.Primary.Damage * 1.33)
+    self.SemiDamage = semidamage or math.floor(self.Primary.Damage * 1.2)
 
     TTTWR.MakeModeSwitch(
         self,
