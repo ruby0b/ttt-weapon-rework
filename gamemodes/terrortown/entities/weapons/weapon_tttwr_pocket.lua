@@ -33,15 +33,14 @@ local _PrimaryFire = SWEP.PrimaryFire
 function SWEP:PrimaryFire()
     _PrimaryFire(self)
 
-    local owner = self:GetOwner()
-    if not IsValid(owner) then return end
-
     if self:Clip1() > 0 then return end
 
-    if owner:GetAmmoCount(self.Primary.Ammo) > 0 then
-        self:Reload()
-    else
-        self:SetIronsights(false)
-        self:SendWeaponAnim(ACT_VM_IDLE)
-    end
+    if self:Reload() ~= false then return end
+
+    self:SetIronsights(false)
+    self:SendWeaponAnim(ACT_VM_IDLE)
+
+    local ent = CLIENT and self:GetOwnerViewModel() or self
+    if ent ~= self and not IsFirstTimePredicted() then return end
+    ent:EmitSound("weapons/pistol/pistol_empty.wav", 60, 100, 0.25, CHAN_AUTO)
 end
