@@ -9,30 +9,29 @@ end
 
 function SWEP:PreSetupDataTables()
 	self:NetworkVar("Float", 2, "SniperCharge")
-
 	self:SetSniperCharge(-1)
 end
 
-function SWEP:PrimaryAttack()
-	self:SetSniperCharge(-1)
+function SWEP:ResetCharge(charge)
+	charge = charge or self:GetSniperCharge()
+	if charge >= 0 then
+		self:SetSniperCharge(-1)
+	end
+	self.BulletDamageMultiplier = nil
+end
 
+function SWEP:PrimaryAttack()
 	self:PrimaryFire()
+	self:ResetCharge()
 end
 
 function SWEP:OnThink()
 	local charge = self:GetSniperCharge()
 
-	if CurTime() < self:GetNextPrimaryFire() or self:Clip1() == 0 then
-		self:SetSniperCharge(-1)
-
-		return
-	end
-
-	if not self:GetIronsights() then
-		if charge >= 0 then
-			self:SetSniperCharge(-1)
-		end
-
+	if (not self:GetIronsights()
+			or CurTime() < self:GetNextPrimaryFire()
+			or self:Clip1() == 0) then
+		self:ResetCharge(charge)
 		return
 	end
 
@@ -51,26 +50,21 @@ function SWEP:OnThink()
 		self.BulletDamageMultiplier = TTTWR.RemapClamp(
 			charge, 100, 1000, 1, self.SniperRifleChargeMaxMultiplier
 		)
-	else
-		charge = nil
-	end
 
-	if charge then
 		self:SetSniperCharge(charge)
 	end
 end
 
 function SWEP:OnStartReload()
-	self:SetSniperCharge(-1)
+	self:ResetCharge()
 end
 
 function SWEP:ZoomablePreDrop()
-	self:SetSniperCharge(-1)
+	self:ResetCharge()
 end
 
 function SWEP:ZoomableHolster()
-	self:SetSniperCharge(-1)
-
+	self:ResetCharge()
 	return true
 end
 
@@ -101,6 +95,6 @@ function SWEP:ZoomableDrawHUD()
 
 	surface.SetFont("TabLarge")
 	surface.SetTextColor(255, 255, 255, 180)
-	surface.SetTextPos( (x - w * 0.5) + 3, y - h - 15)
+	surface.SetTextPos((x - w * 0.5) + 3, y - h - 15)
 	surface.DrawText("DAMAGE")
 end
