@@ -33,7 +33,7 @@ for k, v in pairs({
 	pocket = "Pocket Rifle",
 	winchester = "Winchester",
 
-	m3 = "M3",
+	m3 = "Nova",
 	xm = "XM",
 	spas = "SPAS-12",
 	mag7 = "MAG-7",
@@ -42,10 +42,10 @@ for k, v in pairs({
 	deagle = "Deagle",
 	python = "Revolver",
 
-	huge = "H.U.G.E-249",
+	huge = "M249",
 
 	elites = "Dual Elites",
-	sim16 = "Silenced M4",
+	sim16 = "Silenced M4A1",
 	sipist = "Silenced USP",
 	tmp = "TMP Prototype",
 	penetrator = "X-Ray Deagle",
