@@ -1,6 +1,16 @@
 local SWEP = {}
 
+TTTWR.cv_charge_snipers = CreateConVar("ttt_charge_snipers", "1",
+	FCVAR_ARCHIVE + FCVAR_NOTIFY + FCVAR_REPLICATED,
+	"Should sniper rifles be chargeable?")
+
 function TTTWR:MakeIronsightsChargeableSniper(chargetime, maxdamagemultiplier)
+	-- If the cvar is off, damage is just always the max charged damage
+	if not TTTWR.cv_charge_snipers:GetBool() then
+		self.Primary.Damage = self.Primary.Damage * (maxdamagemultiplier or 2)
+		return
+	end
+
 	TTTWR.CopySWEP(self, SWEP)
 
 	self.SniperRifleChargeTime = chargetime
