@@ -6,7 +6,7 @@ TTTWR.MakeSniper(SWEP,
 	60 / 240,
 	0.02,
 	3,
-	TTWR.cv_charge_snipers:GetBool() and 20 or 5
+	TTTWR.cv_charge_snipers:GetBool() and 20 or 5
 )
 
 TTTWR.MakeIronsightsChargeableSniper(SWEP, 2, 3)
