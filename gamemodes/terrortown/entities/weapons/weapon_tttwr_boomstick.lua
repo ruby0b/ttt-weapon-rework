@@ -27,7 +27,7 @@ if SERVER then
 			if not dmginfo:IsFallDamage() then return end
 			if not (IsValid(target) and target:IsPlayer()) then return end
 			local wep = target:GetActiveWeapon()
-			if not (wep and IsValid(wep) and wep:GetClass() == "boomstick") then return end
+			if not (wep and IsValid(wep) and wep:GetClass() == "weapon_tttwr_boomstick") then return end
 			dmginfo:ScaleDamage(0)
 		end)
 end
