@@ -2,7 +2,7 @@ TTTWR.MakeSniper(SWEP,
     "pocket",
     "",
     "weapons/g2contender/scout-2.wav",
-    17,
+    17 * 3,
     60 / 60,
     0.03,
     4,
@@ -12,7 +12,7 @@ TTTWR.MakeSniper(SWEP,
 )
 
 
-TTTWR.MakeIronsightsChargeableSniper(SWEP, 3, 3)
+-- TTTWR.MakeIronsightsChargeableSniper(SWEP, 3, 3)
 
 if CLIENT then
     SWEP.Slot = 1

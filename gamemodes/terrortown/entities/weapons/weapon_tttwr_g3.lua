@@ -2,14 +2,14 @@ TTTWR.MakeSniper(SWEP,
 	"g3",
 	"g3sg1",
 	"weapons/g3sg1/g3sg1-1.wav",
-	12,
+	12 * 3,
 	60 / 240,
 	0.02,
 	3,
-	TTTWR.cv_charge_snipers:GetBool() and 20 or 5
+	5 --TTTWR.cv_charge_snipers:GetBool() and 20 or 5
 )
 
-TTTWR.MakeIronsightsChargeableSniper(SWEP, 2, 3)
+-- TTTWR.MakeIronsightsChargeableSniper(SWEP, 2, 3)
 
 SWEP.HeadshotMultiplier = 3
 

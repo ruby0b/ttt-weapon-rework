@@ -2,14 +2,14 @@ TTTWR.MakeSniper(SWEP,
 	"awp",
 	"awp",
 	{ "weapons/awp/awp1.wav", 95 },
-	65,
+	65 * 2,
 	60 / 40,
 	0.03,
 	7,
 	2
 )
 
-TTTWR.MakeIronsightsChargeableSniper(SWEP, 2)
+-- TTTWR.MakeIronsightsChargeableSniper(SWEP, 2)
 
 SWEP.HideCrosshair = true
 
